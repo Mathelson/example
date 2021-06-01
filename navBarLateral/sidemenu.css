@@ -148,21 +148,22 @@ body {
 #sidemenu #menu-items .item a {
 	display: block;
 }
-
+/**cambia de color cuando el mouse pasa*/
 #sidemenu #menu-items .item a:hover {
 	background-color: var(--hovercolor);
 }
-/**REVISAR MIN 10*/
+/**ancho del icono*/
 #sidemenu #menu-items .item .icon {
 	box-sizing: border-box;
 	padding: var(--padding);
 	width: var(--width-collapsed);
 }
-
+/**adecuo la imagen al 100% de el ancho*/
 #sidemenu #menu-items .item .icon img {
 	width: 100%;
 }
-
+/**le agrego el padding arriba y abajo del titulo 
+ * del icono*/
 #sidemenu #menu-items .item .title {
 	padding: var(--padding) 0;
 }
@@ -184,12 +185,13 @@ body {
 	margin-right: -5px;
 	padding: var(--padding);
 }
+
 /**la medida del span*/
 .menu-expanded #header #title span {
 	/**ancho total - 5 collapsado */
 	width: calc(var(--width) - var(--width-collapsed) - 5px);
 	overflow: hidden;
-	display: inline-block;
+	/**display: inline-block;*/
 }
 
 /**menu expandido*/
@@ -205,7 +207,7 @@ body {
 	width: var(--width-collapsed);
 }
 
-.menu-collapsed #header ##title {
+.menu-collapsed #header #title {
 	width: 0;
 	height: 0;
 	padding: 0;

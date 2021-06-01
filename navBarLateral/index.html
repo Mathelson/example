@@ -8,6 +8,7 @@
 	<title>Side menu</title>
 </head>
 <body>
+	<!--div id="sidemenu" class="menu-expande"-->
 	<div id="sidemenu" class="menu-collapsed">
 		<!-- HEADER -->
 		<div id="header">
@@ -34,27 +35,37 @@
 					<div class="title"><span>Cloud Services</span></div>
 				</a>
 			</div>
-
-			<div>
-				
-				<div class="item separator">
-					
-			</div>
-
-				<div class="item">
+			<div class="item">
 				<a href="#">
 					<div class="icon"><img src="icons/cloud-png-icon.png" alt=""></div>
 					<div class="title"><span>Cloud Services</span></div>
 				</a>
 			</div>
-
-			</div>
-
-		</div>
+			<!-- item separador-->
+			<div class="item separator">
+			</div><!--fin item separador-->
+				<!-- item hijo-->
+			<div class="item">
+				<a href="#">
+					<div class="icon"><img src="icons/cloud-png-icon.png" alt=""></div>
+					<div class="title"><span>Cloud Services</span></div>
+				</a>
+			</div><!--fin item hijo-->
+		</div><!--iteam padre-->
 	</div>
 
 	<div id="main-container">
 		Hola a todos
 	</div>
+
+
+	<script>
+		const btn = document.querySelector('#menu-btn');
+		const menu = document.querySelector('#sidemenu');
+		btn.addEventListener('click', e =>{
+			menu.classList.toggle("menu-expanded");
+			menu.classList.toggle("menu-collapsed");
+		});
+	</script>
 </body>
 </html>
