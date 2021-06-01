@@ -1,8 +1,11 @@
 :root {
     --width: 300px;
     --padding: 10px;
+    /**backgroud color*/
     --bgcolor:  rgb(52, 52, 52);
+    /**color de sobresalto*/
     --hovercolor:  rgb(23, 23, 23);
+    /**ANCHO DE MI MENU CUANDO ESTA COLAPSADO*/
     --width-collapsed:  50px;
 }
 
@@ -13,4 +16,206 @@ body {
 	padding: 0;
 	margin: 0;
 	margin-left: var(--width-collapsed);
+}
+/**AGREGA UN MARGEN IZQUIERDO*/
+.body-expanded{
+	margin-left: var(--width);
+}
+/**para poder ver el texto*/
+#main-container {
+	color: white;
+}
+
+#sidemenu {
+	background-color: var(--bgcolor);
+	color: white;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+#sidemenu a {
+	color: white;
+}
+
+/*
+
+		HEADER
+
+*/
+/**uado donde clickeo*/
+#sidemenu #header {
+	box-sizing: border-box;
+	border-bottom: solid 1px var(--hovercolor);
+}
+
+#sidemenu #header #title {
+	box-sizing: border-box;
+	/**evito que al momento de colapsar
+	nuestro menu el texto se desborde*/
+	overflow: hidden;
+}
+
+#sidemenu #header #menu-btn {
+	display: inline-block;
+}
+
+#sidemenu #header #menu-btn {
+	cursor: pointer;
+	padding: 10px;
+	width: var(--width-collapsed);
+	box-sizing: border-box;
+
+}
+
+/**PERMITE VER DONDE ESTA MI BOTON DE HAMBURGUESA*/
+#sidemenu #header #menu-btn:hover {
+	background-color: var(--hovercolor);
+}
+ /**las rayas de color blanco aparecen*/
+#sidemenu #header #menu-btn .btn-hamburguer {
+	background-color: #fff;
+	width: 100%;
+	height: 2px;
+	margin: 5px;
+}
+
+
+/**
+
+	PROFILE
+
+*/
+/***lodivido para poder visualizarlo*/
+#sidemenu #profile {
+	border-bottom: solid 1px var(--hovercolor);
+	padding: var(--padding) 0;
+	text-align: center;
+}
+
+/**FOTO*/
+#sidemenu ##profile #photo {
+	box-sizing: border-box;
+	padding: var(--padding);
+	margin: 0 auto;
+}
+
+/**redondeo la imagen*/
+#sidemenu #profile #photo img {
+	/**border-radius: 50%;
+	width: 60%;*/
+	
+	height: 100px;
+    width: 100px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+/**Nombre del perfil*/
+#sidemenu #profile #photo, #sidemenu #profile #name {
+	font-size: 24px;
+	padding: var(--padding) 0;
+	overflow: hidden;
+}
+
+/*
+
+	ITEM
+*/
+/*para que cuando lo colapse no tenga problema*/
+#sidemenu #menu-items {
+	overflow: hidden;
+}
+/*tamanio de item*/
+#sidemenu #menu-items .item {
+	width: var(--width);
+}
+
+/**estilos para iconos y titulo*/
+
+#sidemenu #menu-items .item .icon,
+#sidemenu #menu-items .item .title {
+	font-size: 14px;
+	vertical-align: middle;
+	overflow: hidden;
+	display: inline-block;
+}
+
+#sidemenu #menu-items .item a {
+	display: block;
+}
+
+#sidemenu #menu-items .item a:hover {
+	background-color: var(--hovercolor);
+}
+/**REVISAR MIN 10*/
+#sidemenu #menu-items .item .icon {
+	box-sizing: border-box;
+	padding: var(--padding);
+	width: var(--width-collapsed);
+}
+
+#sidemenu #menu-items .item .icon img {
+	width: 100%;
+}
+
+#sidemenu #menu-items .item .title {
+	padding: var(--padding) 0;
+}
+
+#sidemenu #menu-items .item.separator {
+	height: 1px;
+	border-bottom: solid 1px var(--hovercolor);
+	margin: 15px 0;
+}
+
+.menu-expanded {
+	width: var(--width);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-expanded #header #title {
+	display: inline-block;
+	width: calc(100% - 50px);
+	margin-right: -5px;
+	padding: var(--padding);
+}
+/**la medida del span*/
+.menu-expanded #header #title span {
+	/**ancho total - 5 collapsado */
+	width: calc(var(--width) - var(--width-collapsed) - 5px);
+	overflow: hidden;
+	display: inline-block;
+}
+
+/**menu expandido*/
+.menu-expanded #profile #photo {
+	width: 200px;
+}
+
+.menu-expanded #profile #name {
+	width: 100%;
+}
+
+.menu-collapsed {
+	width: var(--width-collapsed);
+}
+
+.menu-collapsed #header ##title {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-collapsed #profile #name {
+	display: none;
+}
+
+.menu-collapsed {
+	width: 100px;
 }
